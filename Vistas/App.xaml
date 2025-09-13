@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="FrmLogin.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Plantillas/PlantillaTexbox.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="./Plantillas/PlantillaPasswordbox.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="./Plantillas/PlantillaBoton.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
          
     </Application.Resources>
 </Application>

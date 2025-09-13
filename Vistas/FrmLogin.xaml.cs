@@ -21,12 +21,12 @@ namespace Vistas
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Usuario> usuarios = new List<Usuario>();
+        //private List<Usuario> usuarios = new List<Usuario>();
 
         public MainWindow()
         {
             InitializeComponent();
-            InicializarUsuarios();
+            //InicializarUsuarios();
         }
 
 
@@ -35,65 +35,70 @@ namespace Vistas
 
         }
 
-        private void InicializarUsuarios() {
+        private void login_Loaded(object sender, RoutedEventArgs e)
+        {
 
-            usuarios.Add(new Usuario
-            {
-                Usu_ID = 1,
-                Usu_NombreUsuario = "admin",
-                Usu_Contrasenia = "1234",
-                Usu_ApellidoNombre = "Administrador del sistema",
-                Rol_ID = 1 // Administrador
-            });
+        }
 
-            usuarios.Add(new Usuario { 
+        //private void InicializarUsuarios() {
+
+        //    usuarios.Add(new Usuario
+        //    {
+        //        Usu_ID = 1,
+        //        Usu_NombreUsuario = "admin",
+        //        Usu_Contrasenia = "1234",
+        //        Usu_ApellidoNombre = "Administrador del sistema",
+        //        Rol_ID = 1 // Administrador
+        //    });
+
+        //    usuarios.Add(new Usuario { 
             
-                Usu_ID = 2,
-                Usu_NombreUsuario = "docente",
-                Usu_Contrasenia = "1234",
-                Usu_ApellidoNombre = "Profesor Pérez",
-                Rol_ID = 2 // Docente
-            });
+        //        Usu_ID = 2,
+        //        Usu_NombreUsuario = "docente",
+        //        Usu_Contrasenia = "1234",
+        //        Usu_ApellidoNombre = "Profesor Pérez",
+        //        Rol_ID = 2 // Docente
+        //    });
 
-            usuarios.Add(new Usuario
-            {
-                Usu_ID = 3,
-                Usu_NombreUsuario = "recepcion",
-                Usu_Contrasenia = "1234",
-                Usu_ApellidoNombre = "Recepción López",
-                Rol_ID = 3 // Recepcion
-            });
+        //    usuarios.Add(new Usuario
+        //    {
+        //        Usu_ID = 3,
+        //        Usu_NombreUsuario = "recepcion",
+        //        Usu_Contrasenia = "1234",
+        //        Usu_ApellidoNombre = "Recepción López",
+        //        Rol_ID = 3 // Recepcion
+        //    });
 
-        }
+        //}
 
-        private void btnIngresar_Click(object sender, RoutedEventArgs e)
-        {
-            string usuario = txtUsuario.Text;
-            string clave = txtPassword.Password;
-            Usuario encontrado = null;
-            foreach (Usuario u in usuarios) {
-                if (u.Usu_NombreUsuario == usuario && u.Usu_Contrasenia == clave) {
-                    encontrado = u;
-                    break;
-                }
-            }
+        //private void btnIngresar_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string usuario = txtUsuario.Text;
+        //    string clave = txtPassword.Password;
+        //    Usuario encontrado = null;
+        //    foreach (Usuario u in usuarios) {
+        //        if (u.Usu_NombreUsuario == usuario && u.Usu_Contrasenia == clave) {
+        //            encontrado = u;
+        //            break;
+        //        }
+        //    }
 
-            if (encontrado != null)
-            {
-                MessageBox.Show("Bienvenido " + encontrado.Usu_ApellidoNombre);
-                Principal win = new Principal();
-                win.Show();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
-            }
-        }
+        //    if (encontrado != null)
+        //    {
+        //        MessageBox.Show("Bienvenido " + encontrado.Usu_ApellidoNombre);
+        //        Principal win = new Principal();
+        //        win.Show();
+        //        this.Close();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
+        //    }
+        //}
 
-        private void btnSalir_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        //private void btnSalir_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Close();
+        //}
     }
 }

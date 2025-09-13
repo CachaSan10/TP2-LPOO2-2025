@@ -1,0 +1,46 @@
+﻿<Window x:Class="Vistas.Principal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sistema de Gestión de Cursos"
+        Height="400" Width="600"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Background="Pink">
+    <DockPanel>
+        <!-- Menú superior -->
+        <Menu DockPanel.Dock="Top" HorizontalAlignment="Center">
+            
+            <!-- Menú Académico -->
+            <MenuItem Header="_Académico">
+                <MenuItem Header="Curso">
+                    <MenuItem Header="Alta Curso"  Click="AltaCurso_Click"/>
+                </MenuItem>
+                <MenuItem Header="Docente">
+                    <MenuItem Header="Alta Docente"  Click="AltaDocente_Click"/>
+                </MenuItem>
+                <MenuItem Header="Alumno">
+                    <MenuItem Header="Alta Alumno"  Click="AltaAlumno_Click"/>
+                </MenuItem>
+             </MenuItem>
+
+            <!-- Menú Inscripciones -->
+            <MenuItem Header="_Inscripciones"/>
+
+            <!-- Menú Reportes -->
+            <MenuItem Header="_Reportes"/>
+
+            <!-- Menú Sistema -->
+            <MenuItem Header="_Sistema">
+                <MenuItem Header="_Usuarios"/>
+                <Separator/>
+                <MenuItem Header="_Salir" Click="MenuSalir_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Área central para contenido -->
+        <Grid Background="LightGray">
+            <TextBlock Text="Bienvenido al Sistema de Cursos"
+                   FontSize="18" FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+        </Grid>
+    </DockPanel>
+</Window>

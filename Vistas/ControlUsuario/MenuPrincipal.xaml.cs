@@ -9,28 +9,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Vistas
+namespace Vistas.ControlUsuario
 {
     /// <summary>
-    /// Interaction logic for Principal.xaml
+    /// Lógica de interacción para Menu.xaml
     /// </summary>
-    public partial class Principal : Window
+    public partial class MenuPrincipal : UserControl
     {
-        public Principal()
+        public MenuPrincipal()
         {
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         private void MenuSalir_Click(object sender, RoutedEventArgs e)
         {
-            this.Close(); // cerrar aplicación
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                parentWindow.Close();
+            }
         }
 
         private void AltaCurso_Click(object sender, RoutedEventArgs e)
@@ -51,6 +51,5 @@ namespace Vistas
             oFrmAlumno.Show();
         }
 
-      
     }
 }

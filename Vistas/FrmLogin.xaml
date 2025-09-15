@@ -2,10 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:control="clr-namespace:Vistas.ControlUsuario"
-        Title="Login - Sistema de Cursos" Height="380" Width="364"
+        Title="Login - Sistema de Cursos" Height="366" Width="382"
         WindowStartupLocation="CenterScreen" Loaded="Window_Loaded"  Background="#f8f0ec">
 
-    <Grid Margin="10" Height="384" Width="343">
+    <Grid Margin="10" Height="380" Width="326">
           
         <Image Source="/Images/logo-lujan.png"
                Width="163" HorizontalAlignment="Center" Margin="94,0,86,258" />

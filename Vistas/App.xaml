@@ -8,6 +8,8 @@
                 <ResourceDictionary Source="./Plantillas/PlantillaTexbox.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="./Plantillas/PlantillaPasswordbox.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="./Plantillas/PlantillaBoton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="./Plantillas/PlantillaMenu.xaml"></ResourceDictionary>
+                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
          

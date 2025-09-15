@@ -13,7 +13,7 @@
         <Image Source="../Images/password.png" Width="53" Height="40" Margin="12,58,418,324" />
         <PasswordBox Name="txtPassword" Width="200" Margin="70,57,213,322"
              Style="{StaticResource ResourceKey=pwd_plantillaStyle}"></PasswordBox>
-        <Button Name="btnIngresar" Content="Ingresar"  Style="{StaticResource ResourceKey=btnAceptar}" Margin="32,114,367,278"
+        <Button Name="btnIngresar" Content="Ingresar"  Style="{StaticResource ResourceKey=btnAceptar}" Margin="50,114,349,278"
                 Click="btnIngresar_Click"></Button>
         <Button Name="btnCancelar" Content="Salir"  Style="{StaticResource ResourceKey=btnCancelar}" Margin="154,114,245,278"
                  Click="btnSalir_Click"></Button>

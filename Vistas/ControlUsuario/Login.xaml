@@ -3,20 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Height="155" Width="281" >
-    <Grid Height="422" Width="483">
-        
-        <Image Source="../Images/usuario.png" Width="53" Height="40" Margin="12,12,418,370" />
-        <TextBox Name="txtUsuario" 
-                     Width="200"
-         Style="{StaticResource ResourceKey=txt_plantillaStyle}" Margin="71,12,212,370" />
-        <Image Source="../Images/password.png" Width="53" Height="40" Margin="12,58,418,324" />
-        <PasswordBox Name="txtPassword" Width="200" Margin="70,57,213,322"
-             Style="{StaticResource ResourceKey=pwd_plantillaStyle}"></PasswordBox>
-        <Button Name="btnIngresar" Content="Ingresar"  Style="{StaticResource ResourceKey=btnAceptar}" Margin="50,114,349,278"
-                Click="btnIngresar_Click"></Button>
-        <Button Name="btnCancelar" Content="Salir"  Style="{StaticResource ResourceKey=btnCancelar}" Margin="154,114,245,278"
-                 Click="btnSalir_Click"></Button>
+             mc:Ignorable="d" 
+             Height="462" Width="454"
+             Background="{StaticResource FondoBrush}">
 
-    </Grid>
+    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1" Height="454" Width="444">
+        <Grid Margin="25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- LOGO PRINCIPAL -->
+            <Image Source="/Images/logo-lujan.png"
+                   Width="85" Height="98" HorizontalAlignment="Center"
+                   Margin="88,-18,148,20" Grid.Column="1" />
+
+            <!-- TÍTULO PRINCIPAL -->
+            <Label Content="INICIO DE SESIÓN" Grid.Row="1" Grid.ColumnSpan="2"
+                   Style="{StaticResource LabelTitulo}" 
+                   Margin="0,0,0,30"
+                   HorizontalAlignment="Center"/>
+
+            <!-- ICONO Y CAMPO DE USUARIO -->
+            <Image Source="../Images/usuario.png" Width="40" Height="40" 
+                   Grid.Row="2" Grid.Column="0" 
+                   Margin="0,0,15,15"
+                   VerticalAlignment="Center"/>
+
+            <TextBox Name="txtUsuario" Grid.Row="2" Grid.Column="1"
+                     Height="45" Margin="0,0,0,15"
+                     Style="{StaticResource txt_plantillaStyle}" 
+                     VerticalAlignment="Center"
+                     Padding="15,5"
+                     FontSize="16"
+                     VerticalContentAlignment="Center"/>
+
+            <!-- ICONO Y CAMPO DE CONTRASEÑA -->
+            <Image Source="../Images/password.png" Width="40" Height="40" 
+                   Grid.Row="3" Grid.Column="0" 
+                   Margin="0,0,15,25"
+                   VerticalAlignment="Center"/>
+
+            <PasswordBox Name="txtPassword" Grid.Row="3" Grid.Column="1"
+                         Height="45" Margin="0,0,0,25"
+                         Style="{StaticResource pwd_plantillaStyle}"
+                         VerticalAlignment="Center"
+                         Padding="15,5"
+                         FontSize="16"
+                         VerticalContentAlignment="Center"/>
+
+            <!-- BOTONES -->
+            <StackPanel Grid.Row="5" Grid.ColumnSpan="2" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        Margin="0,15,0,0">
+                <Button Name="btnIngresar" Content="Ingresar" Width="120" Height="45"
+                        Style="{StaticResource btnAceptar}" 
+                        Click="btnIngresar_Click" Margin="0,0,15,0"/>
+                <Button Name="btnCancelar" Content="Salir" Width="120" Height="45"
+                        Style="{StaticResource btnCancelar}" 
+                        Click="btnSalir_Click"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
 </UserControl>

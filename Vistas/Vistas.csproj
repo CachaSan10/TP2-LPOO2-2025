@@ -55,7 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ControlUsuario\AltaAlumno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ControlUsuario\AltaCurso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlUsuario\AltaDocente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,8 +95,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ControlUsuario\AltaAlumno.xaml.cs">
+      <DependentUpon>AltaAlumno.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ControlUsuario\AltaCurso.xaml.cs">
       <DependentUpon>AltaCurso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUsuario\AltaDocente.xaml.cs">
+      <DependentUpon>AltaDocente.xaml</DependentUpon>
     </Compile>
     <Compile Include="ControlUsuario\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

@@ -21,6 +21,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="13*" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -39,7 +40,7 @@
                    Style="{StaticResource LabelSubtitulo}" Margin="0,0,0,10"/>
 
             <Label Content="Nombre:" Grid.Row="2" Grid.Column="0" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
-            <TextBox Name="txtNombre" Grid.Row="2" Grid.Column="0" Margin="100,0,0,5" Height="45"
+            <TextBox Name="txtNombre" Grid.Row="2" Margin="100,7,0,0" Height="45"
                      Style="{StaticResource txt_plantillaStyle}" VerticalAlignment="Top"/>
 
             <Label Content="Cupo:" Grid.Row="3" Grid.Column="0" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>

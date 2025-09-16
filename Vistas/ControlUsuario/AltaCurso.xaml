@@ -4,72 +4,125 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="375" d:DesignWidth="803">
-    <Grid Height="720" Width="803">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400*" />
-            <ColumnDefinition Width="363*" />
-        </Grid.ColumnDefinitions>
-        <Label Content="Nombre:" Margin="18,12,282,669"  Style="{StaticResource CustomLabel}" />
-        <TextBox Name="txtNombre" Style="{StaticResource ResourceKey=txt_plantillaStyle}" Margin="118,16,53,664" />
+             d:DesignHeight="643" d:DesignWidth="842"
+             Background="{StaticResource FondoBrush}">
 
-        <Label Content="Descripción:" Margin="15,22,272,670" Grid.Column="1"  Style="{StaticResource CustomLabel}"/>
-        <TextBox Name="txtDescripcion" Style="{StaticResource ResourceKey=txt_plantillaStyle}" Margin="119,16,37,664" Grid.Column="1" />
+    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Label Content="Cupo:" Margin="18,75,273,612"  Style="{StaticResource CustomLabel}"/>
-        <TextBox Name="txtCupo" Style="{StaticResource ResourceKey=txt_plantillaStyle}" Margin="116,78,53,602" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <Label Content="Fecha Inicio:" Margin="12,142,259,0" Height="30" VerticalAlignment="Top"  Style="{StaticResource CustomLabel}"/>
-        <DatePicker Name="dpFechaInicio" Margin="118,138,16,542" 
-                    Style="{StaticResource ResourceKey=CustomDatePicker}" />
+            <!-- TÍTULO PRINCIPAL -->
+            <Label Content="ALTA DE CURSO" Grid.Row="0" Grid.ColumnSpan="2"
+                   Style="{StaticResource LabelTitulo}" Margin="0,0,0,20"/>
+            <Image Source="/Images/logo-lujan.png"
+               Width="96" HorizontalAlignment="Center" Grid.Column="1" Margin="278,-21,6,20" Grid.RowSpan="2" Height="118" />
 
-        <Label Content="Fecha Fin:" Margin="15,137,290,551" Grid.Column="1"  Style="{StaticResource CustomLabel}"/>
-        <DatePicker Name="dpFechaFin" Margin="0,127,12,553" Grid.Column="1" HorizontalAlignment="Right" Width="249" 
-                    Style="{StaticResource ResourceKey=CustomDatePicker}"/>
+            <!-- SECCIÓN 1: INFORMACIÓN BÁSICA -->
+            <Label Content="INFORMACIÓN BÁSICA" Grid.Row="1" Grid.Column="0"
+                   Style="{StaticResource LabelSubtitulo}" Margin="0,0,0,10"/>
 
-        <Label Content="Tipo Estado:" Margin="18,205,267,486"  Style="{StaticResource CustomLabel}"/>
-        <ComboBox x:Name="cmbTipoEstado"
-          SelectionChanged="cmbTipoEstado_SelectionChanged" Style="{StaticResource CustomComboBox}" Margin="118,194,17,486">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="📂" Margin="0,0,6,0"/>
-                        <TextBlock Text="{Binding Esty_Nombre}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+            <Label Content="Nombre:" Grid.Row="2" Grid.Column="0" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
+            <TextBox Name="txtNombre" Grid.Row="2" Grid.Column="0" Margin="100,0,0,5" Height="45"
+                     Style="{StaticResource txt_plantillaStyle}" VerticalAlignment="Top"/>
 
-        <Label Content="Estado:" Margin="15,203,288,488" Grid.Column="1"  Style="{StaticResource CustomLabel}" />
-        <ComboBox x:Name="cmbEstado" Style="{StaticResource CustomComboBox}" Grid.Column="1" Margin="119,194,12,486">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="✅" Margin="0,0,6,0"/>
-                        <TextBlock Text="{Binding Est_Nombre}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+            <Label Content="Cupo:" Grid.Row="3" Grid.Column="0" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
+            <TextBox Name="txtCupo" Grid.Row="3" Grid.Column="0" Margin="100,0,0,5" Height="45"
+                     Style="{StaticResource txt_plantillaStyle}" VerticalAlignment="Top"/>
 
+            <!-- SECCIÓN 2: DESCRIPCIÓN -->
+            <Label Content="DESCRIPCIÓN" Grid.Row="1" Grid.Column="1"
+                   Style="{StaticResource LabelSubtitulo}" Margin="0,0,0,10"/>
 
+            <Label Content="Descripción:" Grid.Row="2" Grid.Column="1" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
+            <TextBox Name="txtDescripcion" Grid.Row="2" Grid.Column="1" Margin="100,0,0,5" Height="60"
+                     Style="{StaticResource txt_plantillaStyle}" VerticalAlignment="Top" TextWrapping="Wrap"/>
 
-        <Label Content="Docente (ID):" Margin="12,256,275,430"  Style="{StaticResource CustomLabel}"/>
-        <ComboBox x:Name="cmbDocente" Style="{StaticResource CustomComboBox}" Margin="118,259,17,421">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="👤" Margin="0,0,6,0"/>
-                        <TextBlock Text="{Binding Doc_Nombre}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+            <!-- SECCIÓN 3: FECHAS -->
+            <Label Content="FECHAS" Grid.Row="4" Grid.Column="0"
+                   Style="{StaticResource LabelSubtitulo}" Margin="0,10,0,10"/>
 
-        <Button Name="btnGuardar" Content="Guardar"  Style="{StaticResource ResourceKey=btnAceptar}" Margin="230,321,37,358"
-                Click="btnGuardar_Click"></Button>
-        <Button Name="btnCancelar" Content="Cancelar"  Style="{StaticResource ResourceKey=btnCancelar}" Margin="38,322,243,359"
-                 Click="btnCancelar_Click" Grid.Column="1"></Button>
+            <Label Content="Fecha Inicio:" Grid.Row="5" Grid.Column="0" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
+            <DatePicker Name="dpFechaInicio" Grid.Row="5" Grid.Column="0" Margin="100,0,0,5" Height="45"
+                        Style="{StaticResource CustomDatePicker}" VerticalAlignment="Top"/>
 
-    </Grid>
+            <Label Content="Fecha Fin:" Grid.Row="6" Grid.Column="0" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
+            <DatePicker Name="dpFechaFin" Grid.Row="6" Grid.Column="0" Margin="100,0,0,5" Height="45"
+                        Style="{StaticResource CustomDatePicker}" VerticalAlignment="Top"/>
+
+            <!-- SECCIÓN 4: ESTADOS -->
+            <Label Content="ESTADO" Grid.Row="4" Grid.Column="1"
+                   Style="{StaticResource LabelSubtitulo}" Margin="0,10,0,10"/>
+
+            <Label Content="Tipo Estado:" Grid.Row="5" Grid.Column="1" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
+            <ComboBox x:Name="cmbTipoEstado" Grid.Row="5" Grid.Column="1" Margin="100,0,0,5" Height="45"
+                      SelectionChanged="cmbTipoEstado_SelectionChanged" Style="{StaticResource CustomComboBox}" VerticalAlignment="Top">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="📂" Margin="0,0,6,0"/>
+                            <TextBlock Text="{Binding Esty_Nombre}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <Label Content="Estado:" Grid.Row="6" Grid.Column="1" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
+            <ComboBox x:Name="cmbEstado" Grid.Row="6" Grid.Column="1" Margin="100,0,0,5" Height="45"
+                      Style="{StaticResource CustomComboBox}" VerticalAlignment="Top">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="✅" Margin="0,0,6,0"/>
+                            <TextBlock Text="{Binding Est_Nombre}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <!-- SECCIÓN 5: DOCENTE -->
+            <Label Content="DOCENTE" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"
+                   Style="{StaticResource LabelSubtitulo}" Margin="0,10,0,10"/>
+
+            <Label Content="Docente (ID):" Grid.Row="8" Grid.Column="0" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
+            <ComboBox x:Name="cmbDocente" Grid.Row="8" Grid.Column="0" Margin="100,0,0,5" Height="45"
+                      Style="{StaticResource CustomComboBox}" Grid.ColumnSpan="2" VerticalAlignment="Top">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="👤" Margin="0,0,6,0"/>
+                            <TextBlock Text="{Binding Doc_Nombre}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <!-- BOTONES -->
+            <StackPanel Grid.Row="9" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                        HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Name="btnGuardar" Content="Guardar" Width="120" Height="45"
+                        Style="{StaticResource btnAceptar}" Click="btnGuardar_Click" Margin="0,0,10,0"/>
+                <Button Name="btnCancelar" Content="Cancelar" Width="120" Height="45"
+                        Style="{StaticResource btnCancelar}" Click="btnCancelar_Click"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+
 </UserControl>

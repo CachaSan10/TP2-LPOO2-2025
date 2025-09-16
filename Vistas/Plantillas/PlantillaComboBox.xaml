@@ -5,6 +5,35 @@
         <Setter Property="Height" Value="40"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Padding" Value="6,4"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Padding" Value="8,6"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ComboBoxItem">
+                                <Border x:Name="Bd" 
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsHighlighted" Value="True">
+                                        <Setter TargetName="Bd" Property="Background" Value="#FFEEEE"/>
+                                        <Setter TargetName="Bd" Property="BorderBrush" Value="#990506"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Bd" Property="Background" Value="#FFEEEE"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
@@ -20,13 +49,14 @@
                                 BorderBrush="#990506"
                                 BorderThickness="2"
                                 Background="White"
-                                Padding="4">
-                            <!-- SelectionBoxItem muestra el texto del elemento seleccionado -->
-                            <ContentPresenter Margin="4,0"
+                                CornerRadius="4"
+                                Padding="8,6">
+                            <ContentPresenter x:Name="ContentSite"
                                               VerticalAlignment="Center"
                                               HorizontalAlignment="Left"
                                               Content="{TemplateBinding SelectionBoxItem}"
-                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"/>
+                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                              ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
                         </Border>
 
                         <!-- Toggle-button que abre/cierra el popup -->
@@ -44,7 +74,7 @@
                                   VerticalAlignment="Center"/>
                         </ToggleButton>
 
-                        <!-- Popup con los items: nombre PART_Popup y ItemsHost -->
+                        <!-- Popup con los items -->
                         <Popup x:Name="PART_Popup"
                                Placement="Bottom"
                                IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
@@ -57,9 +87,8 @@
                                     BorderThickness="2"
                                     CornerRadius="6"
                                     SnapsToDevicePixels="True">
-                                <ScrollViewer MaxHeight="220">
-                                    <!-- El ItemsPresenter es lo que hace que aparezcan los ComboBoxItem -->
-                                    <StackPanel IsItemsHost="True"/>
+                                <ScrollViewer MaxHeight="220" CanContentScroll="True">
+                                    <ItemsPresenter />
                                 </ScrollViewer>
                             </Border>
                         </Popup>
@@ -72,17 +101,21 @@
 
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="Bd" Property="Background" Value="#EEE"/>
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="#CCC"/>
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="Bd" Property="BorderBrush" Value="#600C0C"/>
+                        </Trigger>
+
+                        <Trigger Property="IsEditable" Value="True">
+                            <Setter Property="IsTabStop" Value="False"/>
+                            <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
-
 
 </ResourceDictionary>

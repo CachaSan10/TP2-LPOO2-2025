@@ -3,14 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          xmlns:control="clr-namespace:Vistas.ControlUsuario"
         Title="Alta de Curso"
-        Height="480" Width="845"
+        Height="712" Width="1122"
         WindowStartupLocation="CenterScreen"  Background="#f8f0ec">
 
 
     <Grid Margin="20">
         <control:AltaCurso x:Name="altaCurso"></control:AltaCurso>
-        <Image Source="/Images/logo-lujan.png"
-               Width="143" HorizontalAlignment="Center" Margin="586,286,12,12" />
+       
 
     </Grid>
    

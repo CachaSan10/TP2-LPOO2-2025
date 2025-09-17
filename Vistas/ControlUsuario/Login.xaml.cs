@@ -79,7 +79,8 @@ namespace Vistas.ControlUsuario
 
             if (encontrado != null)
             {
-                MessageBox.Show("Bienvenido " + encontrado.Usu_ApellidoNombre);
+                //MessageBox.Show("Bienvenido " + encontrado.Usu_ApellidoNombre);
+                MessageBoxCustom.Show("Bienvenido " + encontrado.Usu_ApellidoNombre);
                 Principal win = new Principal();
                 win.Show();
                 Window parentWindow = Window.GetWindow(this);

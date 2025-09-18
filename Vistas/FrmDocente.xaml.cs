@@ -41,7 +41,9 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("¿Desea guardar el Docente?", "Confrimar", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            var confirmacion = new MessageBoxConfirm("¿Desea guardar el Docente?", "Atención");
+            bool? resultado = confirmacion.ShowDialog();
+            if (resultado == true)
             {
                 if (altaDocente.txtDNI.Text != "" && altaDocente.txtNombre.Text != "" && altaDocente.txtApellido.Text != "" && altaDocente.txtEmail.Text != "")
                 {

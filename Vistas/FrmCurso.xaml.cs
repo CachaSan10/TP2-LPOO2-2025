@@ -69,8 +69,10 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            var confirmacion = new MessageBoxConfirm("¿Desea guardar este Curso?", "Atención");
+            bool? resultado = confirmacion.ShowDialog();
 
-            if (MessageBox.Show("¿Desea guardar este Curso?", "Confrimar", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (resultado == true)
             {
                 if (verificarCampos())
                 {

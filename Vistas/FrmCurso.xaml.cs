@@ -86,7 +86,7 @@ namespace Vistas
                     oCurso.Doc_ID = altaCurso.cmbDocente.SelectedValue != null ? (int)altaCurso.cmbDocente.SelectedValue : 0;
 
 
-                    MessageBox.Show(
+                    MessageBoxCustom.ShowSuccess(
 
                         "Curso Cargado: \n" +
                         "Nombre: " + oCurso.Cur_Nombre + "\n" +
@@ -103,7 +103,7 @@ namespace Vistas
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, complete todos los campos correctamente. Asegúrese de que los campos numéricos sean válidos y que las fechas estén seleccionadas.");
+                    MessageBoxCustom.ShowWarning("Por favor, complete todos los campos correctamente. Asegúrese de que los campos numéricos sean válidos y que las fechas estén seleccionadas.");
                 }
             }
         }

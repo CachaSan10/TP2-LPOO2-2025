@@ -76,19 +76,19 @@
 
                         <!-- Popup con los items -->
                         <Popup x:Name="PART_Popup"
-                               Placement="Bottom"
-                               IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
-                               AllowsTransparency="True"
-                               Focusable="False"
-                               StaysOpen="False"
-                               PopupAnimation="Slide">
+       Placement="Bottom"
+       IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
+       AllowsTransparency="True"
+       Focusable="False"
+       StaysOpen="False"
+       PopupAnimation="Slide">
                             <Border Background="White"
-                                    BorderBrush="#990506"
-                                    BorderThickness="2"
-                                    CornerRadius="6"
-                                    SnapsToDevicePixels="True">
+            BorderBrush="#990506"
+            BorderThickness="2"
+            CornerRadius="6"
+            SnapsToDevicePixels="True">
                                 <ScrollViewer MaxHeight="220" CanContentScroll="True">
-                                    <ItemsPresenter />
+                                    <ItemsPresenter Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ComboBox}}"/>
                                 </ScrollViewer>
                             </Border>
                         </Popup>

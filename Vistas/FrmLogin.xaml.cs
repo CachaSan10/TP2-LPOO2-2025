@@ -93,11 +93,7 @@ namespace Vistas
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
-            Window parentWindow = Window.GetWindow(this);
-            if (parentWindow != null)
-            {
-                parentWindow.Close();
-            }
+            this.Close();
         }
    
     }

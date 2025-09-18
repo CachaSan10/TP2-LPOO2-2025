@@ -52,20 +52,20 @@ namespace Vistas
                     oDocente.Doc_Email = altaDocente.txtEmail.Text;
 
 
-                    MessageBox.Show(
+                    MessageBoxCustom.Show(
 
                         "Docente cargado: \n" +
                         "DNI: " + oDocente.Doc_DNI + "\n" +
                         "Apellido: " + oDocente.Doc_Apellido + "\n" +
                         "Nombre: " + oDocente.Doc_Nombre + "\n" +
-                        "Email: " + oDocente.Doc_Email
+                        "Email: " + oDocente.Doc_Email, "Datos Guardados", MessageType.Success
 
                         );
                     Limpiar_Campos();
                 }
                 else
                 {
-                    MessageBox.Show("No se permiten campos vacios");
+                    MessageBoxCustom.Show("No se permiten campos vacios", "Advertencia",MessageType.Error);
                 }
 
 

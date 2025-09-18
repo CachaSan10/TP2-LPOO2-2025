@@ -4,11 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             Height="462" Width="454"
+             Height="203" Width="460"
              Background="{StaticResource FondoBrush}">
 
-    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1" Height="454" Width="444">
-        <Grid Margin="25">
+    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1" Height="160" Width="402">
+        <Grid Margin="25" Height="115">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -23,16 +23,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- LOGO PRINCIPAL -->
-            <Image Source="/Images/logo-lujan.png"
-                   Width="85" Height="98" HorizontalAlignment="Center"
-                   Margin="88,-18,148,20" Grid.Column="1" />
-
-            <!-- TÍTULO PRINCIPAL -->
-            <Label Content="INICIO DE SESIÓN" Grid.Row="1" Grid.ColumnSpan="2"
-                   Style="{StaticResource LabelTitulo}" 
-                   Margin="0,0,0,30"
-                   HorizontalAlignment="Center"/>
+           
 
             <!-- ICONO Y CAMPO DE USUARIO -->
             <Image Source="../Images/usuario.png" Width="40" Height="40" 
@@ -62,19 +53,7 @@
                          FontSize="16"
                          VerticalContentAlignment="Center"/>
 
-            <!-- BOTONES -->
-            <StackPanel Grid.Row="5" Grid.ColumnSpan="2" 
-                        Orientation="Horizontal" 
-                        HorizontalAlignment="Center" 
-                        Margin="0,15,0,0">
-                <Button Name="btnIngresar" Content="Ingresar" Width="120" Height="45"
-                        Style="{StaticResource btnAceptar}" 
-                        Click="btnIngresar_Click" Margin="0,0,15,0"/>
-                <Button Name="btnCancelar" Content="Salir" Width="120" Height="45"
-                        Style="{StaticResource btnCancelar}" 
-                        Click="btnSalir_Click"/>
-            </StackPanel>
-
+            
         </Grid>
     </Border>
 </UserControl>

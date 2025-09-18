@@ -4,11 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="515"
-             Background="{StaticResource FondoBrush}">
+             d:DesignHeight="336" d:DesignWidth="567">
 
-    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1" Height="486" Width="499">
-        <Grid Margin="30" Height="422" Width="427">
+    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1" Height="283" Width="521">
+        <Grid Margin="25">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -16,28 +15,21 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="19*" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <!-- TÍTULO PRINCIPAL -->
-            <Label Content="ALTA DE ALUMNO" Grid.Row="0" Grid.ColumnSpan="2"
-                   Style="{StaticResource LabelTitulo}" Margin="0,0,0,30"
-                   HorizontalAlignment="Center"/>
-            <Image Source="/Images/logo-lujan.png"
-               Width="88" HorizontalAlignment="Center" Grid.Column="1" Margin="234,-32,0,22" Height="96" />
+          
 
             <!-- DNI -->
             <Label Content="DNI:" Grid.Row="1" Grid.Column="0" 
                    Style="{StaticResource CustomLabel}" 
-                   VerticalAlignment="Center" Height="45" Margin="0,0,10,15"/>
-            <TextBox Name="txtDNI" Grid.Row="1" Grid.Column="1" 
+                   VerticalAlignment="Center" Height="45" Margin="0,0,15,15"/>
+            <TextBox Name="txtDNI" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                      Height="45" Margin="0,0,0,15"
                      Style="{StaticResource txt_plantillaStyle}" 
                      VerticalAlignment="Center"/>
@@ -45,8 +37,8 @@
             <!-- NOMBRE -->
             <Label Content="Nombre:" Grid.Row="2" Grid.Column="0" 
                    Style="{StaticResource CustomLabel}" 
-                   VerticalAlignment="Center" Height="45" Margin="0,0,10,15"/>
-            <TextBox Name="txtNombre" Grid.Row="2" Grid.Column="1" 
+                   VerticalAlignment="Center" Height="45" Margin="0,0,15,15"/>
+            <TextBox Name="txtNombre" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
                      Height="45" Margin="0,0,0,15"
                      Style="{StaticResource txt_plantillaStyle}" 
                      VerticalAlignment="Center"/>
@@ -54,8 +46,8 @@
             <!-- APELLIDO -->
             <Label Content="Apellido:" Grid.Row="3" Grid.Column="0" 
                    Style="{StaticResource CustomLabel}" 
-                   VerticalAlignment="Center" Height="45" Margin="0,0,10,15"/>
-            <TextBox Name="txtApellido" Grid.Row="3" Grid.Column="1" 
+                   VerticalAlignment="Center" Height="45" Margin="0,0,15,15"/>
+            <TextBox Name="txtApellido" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
                      Height="45" Margin="0,0,0,15"
                      Style="{StaticResource txt_plantillaStyle}" 
                      VerticalAlignment="Center"/>
@@ -63,29 +55,12 @@
             <!-- EMAIL -->
             <Label Content="Email:" Grid.Row="4" Grid.Column="0" 
                    Style="{StaticResource CustomLabel}" 
-                   VerticalAlignment="Center" Height="45" Margin="0,0,10,15"/>
-            <TextBox Name="txtEmail" Grid.Row="4" Grid.Column="1" 
+                   VerticalAlignment="Center" Height="45" Margin="0,0,15,15"/>
+            <TextBox Name="txtEmail" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
                      Height="45" Margin="0,0,0,15"
                      Style="{StaticResource txt_plantillaStyle}" 
                      VerticalAlignment="Center"/>
 
-            <!-- ESPACIADOR -->
-            <Rectangle Grid.Row="5" Grid.ColumnSpan="2" Height="20" Fill="Transparent"/>
-
-            <!-- BOTONES -->
-            <StackPanel Grid.Row="6" Grid.ColumnSpan="2" 
-                        Orientation="Horizontal" 
-                        HorizontalAlignment="Center" 
-                        Margin="0,20,0,0">
-                <Button Name="btnGuardar" Content="Guardar" Width="120" Height="45"
-                        Style="{StaticResource btnAceptar}" 
-                        Click="btnGuardar_Click" Margin="0,0,15,0"/>
-                <Button Name="btnCancelar" Content="Cancelar" Width="120" Height="45"
-                        Style="{StaticResource btnCancelar}" 
-                        Click="btnCancelar_Click"/>
-            </StackPanel>
-
         </Grid>
     </Border>
-
 </UserControl>

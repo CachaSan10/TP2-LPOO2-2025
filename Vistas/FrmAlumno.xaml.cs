@@ -10,7 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using ClasesBase;
 
 namespace Vistas
 {
@@ -22,6 +22,52 @@ namespace Vistas
         public FrmAlumno()
         {
             InitializeComponent();
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Limpiar_Campos()
+        {
+
+            altaAlumno.txtDNI.Clear();
+            altaAlumno.txtApellido.Clear();
+            altaAlumno.txtNombre.Clear();
+            altaAlumno.txtEmail.Clear();
+        } 
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("¿Desea guardar el Alumno?", "Confrimar", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+
+                if (altaAlumno.txtDNI.Text != "" && altaAlumno.txtNombre.Text != "" && altaAlumno.txtApellido.Text != "" && altaAlumno.txtEmail.Text != "")
+                {
+                    Alumno oAlumno = new Alumno();
+                    oAlumno.Alu_DNI = altaAlumno.txtDNI.Text;
+                    oAlumno.Alu_Apellido = altaAlumno.txtApellido.Text;
+                    oAlumno.Alu_Nombre = altaAlumno.txtNombre.Text;
+                    oAlumno.Alu_Email = altaAlumno.txtEmail.Text;
+
+
+                    MessageBoxCustom.ShowSuccess(
+
+                        "Alumno cargado: \n" +
+                        "DNI: " + oAlumno.Alu_DNI + "\n" +
+                        "Apellido: " + oAlumno.Alu_Apellido + "\n" +
+                        "Nombre: " + oAlumno.Alu_Nombre + "\n" +
+                        "Email: " + oAlumno.Alu_Email
+
+                        );
+
+                    Limpiar_Campos();
+                }
+                else
+                {
+                    MessageBoxCustom.ShowWarning("No se permiten campos vacios");
+                }
+            }
         }
 
        

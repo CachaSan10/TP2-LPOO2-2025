@@ -4,11 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="643" d:DesignWidth="842"
+             d:DesignHeight="490" d:DesignWidth="857"
              Background="{StaticResource FondoBrush}">
 
-    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1">
-        <Grid Margin="20">
+    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1" Height="457" Width="807">
+        <Grid Margin="20" Height="422">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -29,11 +29,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- TÍTULO PRINCIPAL -->
-            <Label Content="ALTA DE CURSO" Grid.Row="0" Grid.ColumnSpan="2"
-                   Style="{StaticResource LabelTitulo}" Margin="0,0,0,20"/>
-            <Image Source="/Images/logo-lujan.png"
-               Width="96" HorizontalAlignment="Center" Grid.Column="1" Margin="278,-21,6,20" Grid.RowSpan="2" Height="118" />
+           
 
             <!-- SECCIÓN 1: INFORMACIÓN BÁSICA -->
             <Label Content="INFORMACIÓN BÁSICA" Grid.Row="1" Grid.Column="0"
@@ -114,15 +110,7 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
 
-            <!-- BOTONES -->
-            <StackPanel Grid.Row="9" Grid.ColumnSpan="2" Orientation="Horizontal" 
-                        HorizontalAlignment="Center" Margin="0,20,0,0">
-                <Button Name="btnGuardar" Content="Guardar" Width="120" Height="45"
-                        Style="{StaticResource btnAceptar}" Click="btnGuardar_Click" Margin="0,0,10,0"/>
-                <Button Name="btnCancelar" Content="Cancelar" Width="120" Height="45"
-                        Style="{StaticResource btnCancelar}" Click="btnCancelar_Click"/>
-            </StackPanel>
-
+          
         </Grid>
     </Border>
 

@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ClasesBase;
+
 
 namespace Vistas.ControlUsuario
 {
@@ -20,89 +20,16 @@ namespace Vistas.ControlUsuario
     /// </summary>
     public partial class Login : UserControl
     {
-        private List<Usuario> usuarios = new List<Usuario>();
+      
         public Login()
         {
             InitializeComponent();
-            InicializarUsuarios();
-        }
-
-        private void InicializarUsuarios()
-        {
-
-            usuarios.Add(new Usuario
-            {
-                Usu_ID = 1,
-                Usu_NombreUsuario = "admin",
-                Usu_Contrasenia = "1234",
-                Usu_ApellidoNombre = "Administrador del sistema",
-                Rol_ID = 1 // Administrador
-            });
-
-            usuarios.Add(new Usuario
-            {
-
-                Usu_ID = 2,
-                Usu_NombreUsuario = "docente",
-                Usu_Contrasenia = "1234",
-                Usu_ApellidoNombre = "Profesor Pérez",
-                Rol_ID = 2 // Docente
-            });
-
-            usuarios.Add(new Usuario
-            {
-                Usu_ID = 3,
-                Usu_NombreUsuario = "recepcion",
-                Usu_Contrasenia = "1234",
-                Usu_ApellidoNombre = "Recepción López",
-                Rol_ID = 3 // Recepcion
-            });
-
         }
 
    
   
         
-        private void btnIngresar_Click(object sender, RoutedEventArgs e)
-        {
-            string usuario = txtUsuario.Text;
-            string clave = txtPassword.Password;
-            Usuario encontrado = null;
-            foreach (Usuario u in usuarios)
-            {
-                if (u.Usu_NombreUsuario == usuario && u.Usu_Contrasenia == clave)
-                {
-                    encontrado = u;
-                    break;
-                }
-            }
-
-            if (encontrado != null)
-            {
-                //MessageBox.Show("Bienvenido " + encontrado.Usu_ApellidoNombre);
-                MessageBoxCustom.Show("Bienvenido " + encontrado.Usu_ApellidoNombre);
-                Principal win = new Principal();
-                win.Show();
-                Window parentWindow = Window.GetWindow(this);
-                if (parentWindow != null)
-                {
-                    parentWindow.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-        private void btnSalir_Click(object sender, RoutedEventArgs e)
-        {
-            Window parentWindow = Window.GetWindow(this);
-            if (parentWindow != null)
-            {
-                parentWindow.Close();
-            }
-        }
+        
 
       
        

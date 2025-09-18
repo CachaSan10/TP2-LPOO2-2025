@@ -27,7 +27,8 @@
             <MenuItem Header="_Inscripciones" Style="{StaticResource MenuItemPrincipal}"/>
             <MenuItem Header="_Reportes" Style="{StaticResource MenuItemPrincipal}"/>
             <MenuItem Header="_Sistema" Style="{StaticResource MenuItemPrincipal}">
-                <MenuItem Header="_Usuarios" Style="{StaticResource MenuItemSubmenu}"/>
+                <MenuItem Header="_Usuarios" Style="{StaticResource MenuItemSubmenu}"
+                          Click="AltaUsuario_Click"/>
                 <Separator/>
                 <MenuItem Header="_Salir" Click="MenuSalir_Click" 
                   Style="{StaticResource MenuItemSubmenu}"/>

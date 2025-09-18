@@ -51,5 +51,11 @@ namespace Vistas.ControlUsuario
             oFrmAlumno.Show();
         }
 
+        private void AltaUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            FrmUsuario oFrmUsuario = new FrmUsuario();
+            oFrmUsuario.Show();
+        }
+
     }
 }

@@ -4,12 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="349" d:DesignWidth="519"
+             d:DesignHeight="380" d:DesignWidth="551"
              Background="{StaticResource FondoBrush}">
 
-    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1" Width="476" Height="297">
-        <Grid Margin="30" Height="246">
+    <Border Margin="20" CornerRadius="10" Background="White" BorderBrush="{StaticResource BordeBrush}" BorderThickness="1" Height="345" Width="509">
+        <Grid Margin="25" Height="423" Width="445">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -23,12 +24,12 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            
+          
 
             <!-- NOMBRE DE USUARIO -->
             <Label Content="Nombre Usuario:" Grid.Row="1" Grid.Column="0" 
                    Style="{StaticResource CustomLabel}" 
-                   VerticalAlignment="Center" Height="45" Margin="0,0,10,15"/>
+                   VerticalAlignment="Center" Height="45" Margin="0,0,15,15"/>
             <TextBox Name="txtNombreUsuario" Grid.Row="1" Grid.Column="1" 
                      Height="45" Margin="0,0,0,15"
                      Style="{StaticResource txt_plantillaStyle}" 
@@ -37,7 +38,7 @@
             <!-- CONTRASEÑA -->
             <Label Content="Contraseña:" Grid.Row="2" Grid.Column="0" 
                    Style="{StaticResource CustomLabel}" 
-                   VerticalAlignment="Center" Height="45" Margin="0,0,10,15"/>
+                   VerticalAlignment="Center" Height="45" Margin="0,0,15,15"/>
             <TextBox Name="txtPassword" Grid.Row="2" Grid.Column="1" 
                      Height="45" Margin="0,0,0,15"
                      Style="{StaticResource txt_plantillaStyle}" 
@@ -46,7 +47,7 @@
             <!-- APELLIDO -->
             <Label Content="Apellido:" Grid.Row="3" Grid.Column="0" 
                    Style="{StaticResource CustomLabel}" 
-                   VerticalAlignment="Center" Height="45" Margin="0,0,10,15"/>
+                   VerticalAlignment="Center" Height="45" Margin="0,0,15,15"/>
             <TextBox Name="txtApellido" Grid.Row="3" Grid.Column="1" 
                      Height="45" Margin="0,0,0,15"
                      Style="{StaticResource txt_plantillaStyle}" 
@@ -55,7 +56,7 @@
             <!-- NOMBRE -->
             <Label Content="Nombre:" Grid.Row="4" Grid.Column="0" 
                    Style="{StaticResource CustomLabel}" 
-                   VerticalAlignment="Center" Height="45" Margin="0,0,10,15"/>
+                   VerticalAlignment="Center" Height="45" Margin="0,0,15,15"/>
             <TextBox Name="txtNombre" Grid.Row="4" Grid.Column="1" 
                      Height="45" Margin="0,0,0,15"
                      Style="{StaticResource txt_plantillaStyle}" 
@@ -63,7 +64,24 @@
 
             
 
+            <Label Content="Rol:" Grid.Row="6" Grid.Column="0" 
+                   Style="{StaticResource CustomLabel}" 
+                   VerticalAlignment="Center" Height="45" Margin="0,0,15,0"/>
+            <ComboBox x:Name="cmbRol" Grid.Row="6" Grid.Column="1" 
+                      Height="45" Margin="0,0,0,0"
+                      
+                      Style="{StaticResource CustomComboBox}" 
+                      VerticalAlignment="Center">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="🎭" Margin="0,0,8,0" FontSize="14" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Rol_Descripcion}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
         </Grid>
     </Border>
-
 </UserControl>

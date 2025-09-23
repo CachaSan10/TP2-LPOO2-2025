@@ -49,10 +49,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\Roles.cs" />
     <Compile Include="Entity\Usuario.cs" />
+    <Compile Include="Utilities\Validators\EmailValidator.cs" />
+    <Compile Include="Utilities\Validators\StringValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagram\ClassDiagram.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

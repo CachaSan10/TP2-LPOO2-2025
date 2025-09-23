@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClasesBase;
+using ClasesBase.Utilities.Validators;
 
 namespace Vistas
 {
@@ -21,6 +22,7 @@ namespace Vistas
     {
 
         private List<Roles> roles = new List<Roles>();
+        private string errores = "";
         public FrmUsuario()
         {
             InitializeComponent();
@@ -92,7 +94,7 @@ namespace Vistas
                 }
                 else
                 {
-                    MessageBoxCustom.ShowError("Por favor, complete todos los campos correctamente.");
+                    MessageBoxCustom.ShowError(errores);
                 }
             }
         }
@@ -103,14 +105,37 @@ namespace Vistas
         private Boolean verificarCampos()
         {
             Boolean verificado = false;
+            var resultadoNombre = StringValidator.ValidarNombreApellido("Nombre" , altaUsuario.txtNombre.Text);
+            var resultadoApellido = StringValidator.ValidarNombreApellido("Apelldo" ,altaUsuario.txtApellido.Text);
+            var resultadoUsuario = StringValidator.ValidarNombreApellido("Usuario", altaUsuario.txtNombreUsuario.Text);
+            var resultadoContraseña = StringValidator.ValidarNombreApellido("Contraseña" ,altaUsuario.txtApellido.Text);
 
-            if (!string.IsNullOrEmpty(altaUsuario.txtNombre.Text) &&
-                !string.IsNullOrEmpty(altaUsuario.txtApellido.Text) &&
-                !string.IsNullOrEmpty(altaUsuario.txtNombreUsuario.Text) &&
-                !string.IsNullOrEmpty(altaUsuario.txtPassword.Text) &&
+            if (resultadoNombre.IsValid && resultadoApellido.IsValid &&
+                resultadoUsuario.IsValid &&
+                resultadoContraseña.IsValid &&
                 altaUsuario.cmbRol.SelectedIndex != -1)
             {
                 verificado = true;
+            }
+            else {
+                if (!resultadoNombre.IsValid)
+                {
+                    errores = resultadoNombre.ErrorMessage;
+                }
+
+                if (!resultadoApellido.IsValid)
+                {
+                    errores = errores + " " + resultadoApellido.ErrorMessage;
+                }
+
+                if (!resultadoUsuario.IsValid) {
+                    errores = errores + " " + resultadoUsuario.ErrorMessage;
+                }
+
+                if (!resultadoContraseña.IsValid) {
+                    errores = errores + " " + resultadoContraseña.ErrorMessage;
+                }
+            
             }
 
             return verificado;

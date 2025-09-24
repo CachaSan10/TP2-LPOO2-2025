@@ -37,9 +37,9 @@
                 <!-- BOTONES -->
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,5">
                     <Button x:Name="btnSi" Content="Sí" Width="100" Height="35" Margin="5,0"
-                            Click="btnSi_Click" Background="#990506" Foreground="White" FontWeight="Bold"/>
+                            Click="btnSi_Click" Style="{StaticResource btnAceptar}"/>
                     <Button x:Name="btnNo" Content="No" Width="100" Height="35" Margin="5,0"
-                            Click="btnNo_Click" Background="#bb6b6b" Foreground="White" FontWeight="Bold"/>
+                            Click="btnNo_Click" Style="{StaticResource btnCancelar}" />
                 </StackPanel>
             </Grid>
         </Border>

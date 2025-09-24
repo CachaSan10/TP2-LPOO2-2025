@@ -259,11 +259,9 @@ namespace Vistas
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             // OPTIMIZADO: Lógica de confirmación centralizada.
-            if (MessageBox.Show("¿Está seguro que desea salir del sistema?",
-                                "Confirmar salida",
-                                MessageBoxButton.YesNo,
-                                MessageBoxImage.Question,
-                                MessageBoxResult.No) == MessageBoxResult.No)
+            var confirmacion = new MessageBoxConfirm("¿Desea Salir del sistema?", "Atención");
+            bool? resultado = confirmacion.ShowDialog();
+            if (resultado == false)
             {
                 e.Cancel = true; // Cancela el cierre de la ventana.
             }

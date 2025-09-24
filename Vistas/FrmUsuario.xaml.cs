@@ -95,6 +95,7 @@ namespace Vistas
                 else
                 {
                     MessageBoxCustom.ShowError(errores);
+                    errores = "";
                 }
             }
         }
@@ -108,12 +109,13 @@ namespace Vistas
             var resultadoNombre = StringValidatorNombreApellido.ValidarNombreApellido("Nombre" , altaUsuario.txtNombre.Text);
             var resultadoApellido = StringValidatorNombreApellido.ValidarNombreApellido("Apellido", altaUsuario.txtApellido.Text);
             var resultadoUsuario = UserValidator.ValidarUsuario(altaUsuario.txtNombreUsuario.Text);
-            var resultadoContraseña = StringValidatorNombreApellido.ValidarNombreApellido("Contraseña", altaUsuario.txtApellido.Text);
+            var resultadoContraseña = PasswordValidator.ValidarPassword(altaUsuario.txtPassword.Text);
+            var resultadoCmbRol = ComboBoxValidator.ValidarSeleccion(altaUsuario.cmbRol, "Rol");
 
             if (resultadoNombre.IsValid && resultadoApellido.IsValid &&
                 resultadoUsuario.IsValid &&
                 resultadoContraseña.IsValid &&
-                altaUsuario.cmbRol.SelectedIndex != -1)
+                resultadoCmbRol.IsValid)
             {
                 verificado = true;
             }
@@ -135,7 +137,11 @@ namespace Vistas
                 if (!resultadoContraseña.IsValid) {
                     errores = errores + " " + resultadoContraseña.ErrorMessage + "\n";
                 }
-            
+
+                if (!resultadoCmbRol.IsValid)
+                {
+                    errores = errores + " " + resultadoCmbRol.ErrorMessage + "\n";
+                }
             }
 
             return verificado;

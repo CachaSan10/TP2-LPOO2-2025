@@ -105,10 +105,10 @@ namespace Vistas
         private Boolean verificarCampos()
         {
             Boolean verificado = false;
-            var resultadoNombre = StringValidator.ValidarNombreApellido("Nombre" , altaUsuario.txtNombre.Text);
-            var resultadoApellido = StringValidator.ValidarNombreApellido("Apelldo" ,altaUsuario.txtApellido.Text);
-            var resultadoUsuario = StringValidator.ValidarNombreApellido("Usuario", altaUsuario.txtNombreUsuario.Text);
-            var resultadoContraseña = StringValidator.ValidarNombreApellido("Contraseña" ,altaUsuario.txtApellido.Text);
+            var resultadoNombre = StringValidatorNombreApellido.ValidarNombreApellido("Nombre" , altaUsuario.txtNombre.Text);
+            var resultadoApellido = StringValidatorNombreApellido.ValidarNombreApellido("Apellido", altaUsuario.txtApellido.Text);
+            var resultadoUsuario = UserValidator.ValidarUsuario(altaUsuario.txtNombreUsuario.Text);
+            var resultadoContraseña = StringValidatorNombreApellido.ValidarNombreApellido("Contraseña", altaUsuario.txtApellido.Text);
 
             if (resultadoNombre.IsValid && resultadoApellido.IsValid &&
                 resultadoUsuario.IsValid &&
@@ -120,20 +120,20 @@ namespace Vistas
             else {
                 if (!resultadoNombre.IsValid)
                 {
-                    errores = resultadoNombre.ErrorMessage;
+                    errores = resultadoNombre.ErrorMessage + "\n";
                 }
 
                 if (!resultadoApellido.IsValid)
                 {
-                    errores = errores + " " + resultadoApellido.ErrorMessage;
+                    errores = errores + " " + resultadoApellido.ErrorMessage + "\n";
                 }
 
                 if (!resultadoUsuario.IsValid) {
-                    errores = errores + " " + resultadoUsuario.ErrorMessage;
+                    errores = errores + " " + resultadoUsuario.ErrorMessage + "\n";
                 }
 
                 if (!resultadoContraseña.IsValid) {
-                    errores = errores + " " + resultadoContraseña.ErrorMessage;
+                    errores = errores + " " + resultadoContraseña.ErrorMessage + "\n";
                 }
             
             }

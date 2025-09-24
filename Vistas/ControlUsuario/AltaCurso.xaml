@@ -48,8 +48,8 @@
                    Style="{StaticResource LabelSubtitulo}" Margin="0,0,0,10"/>
 
             <Label Content="Descripción:" Grid.Row="2" Grid.Column="1" Style="{StaticResource CustomLabel}" VerticalAlignment="Center" Height="45" Margin="0,0,0,5"/>
-            <TextBox Name="txtDescripcion" Grid.Row="2" Grid.Column="1" Margin="100,0,0,5" Height="60"
-                     Style="{StaticResource txt_plantillaStyle}" VerticalAlignment="Top" TextWrapping="Wrap"/>
+            <TextBox Name="txtDescripcion" Grid.Row="2" Grid.Column="1" Margin="100,0,0,0" Height="110"
+                     Style="{StaticResource txt_plantillaStyle}" VerticalAlignment="Top" TextWrapping="Wrap" Grid.RowSpan="2" />
 
             <!-- SECCIÓN 3: FECHAS -->
             <Label Content="FECHAS" Grid.Row="4" Grid.Column="0"

@@ -70,6 +70,7 @@ namespace Vistas
                 else
                 {
                     MessageBoxCustom.ShowError(errores);
+                    errores = "";
                 }
 
 

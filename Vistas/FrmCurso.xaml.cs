@@ -95,9 +95,9 @@ namespace Vistas
             var resultadoCmbEstado = ComboBoxValidator.ValidarSeleccion(altaCurso.cmbEstado, "Estado");
             var resultadoCmbTipoEstado = ComboBoxValidator.ValidarSeleccion(altaCurso.cmbTipoEstado, "Tipo Estado");
             var resultadoCmbDocente = ComboBoxValidator.ValidarSeleccion(altaCurso.cmbDocente, "Docente");
-            var resultadoFechaInicio = FechaValidator.ValidarFechaFutura(altaCurso.dpFechaInicio.SelectedDate.Value, "Inicio");
-            var resultadoFechaFin = FechaValidator.ValidarFechaFutura(altaCurso.dpFechaFin.SelectedDate.Value , "Fin");
-            var resultadoRangoFecha = FechaValidator.ValidarRangoFechas(altaCurso.dpFechaInicio.SelectedDate.Value, altaCurso.dpFechaFin.SelectedDate.Value);
+            var resultadoFechaInicio = FechaValidator.ValidarFechaFutura(altaCurso.dpFechaInicio.SelectedDate, "Inicio");
+            var resultadoFechaFin = FechaValidator.ValidarFechaFutura(altaCurso.dpFechaFin.SelectedDate , "Fin");
+            var resultadoRangoFecha = FechaValidator.ValidarRangoFechas(altaCurso.dpFechaInicio.SelectedDate, altaCurso.dpFechaFin.SelectedDate);
 
             if (
                resultadoNombre.IsValid &&

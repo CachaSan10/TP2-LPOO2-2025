@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace ClasesBase.Utilities.Validators
 {
-    public static class StringValidator
+    public static class StringValidatorNombreApellido
     {
 
         public class ValidationResult

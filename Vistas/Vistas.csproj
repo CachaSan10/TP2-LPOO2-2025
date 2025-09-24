@@ -79,11 +79,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Estilos\MessageBoxConfirm.xaml">
+    <Page Include="MessageBox\MessageBoxConfirm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Estilos\MessageBoxCustom.xaml">
+    <Page Include="MessageBox\MessageBoxCustom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,10 +125,10 @@
     <Compile Include="ControlUsuario\MenuPrincipal.xaml.cs">
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Estilos\MessageBoxConfirm.xaml.cs">
+    <Compile Include="MessageBox\MessageBoxConfirm.xaml.cs">
       <DependentUpon>MessageBoxConfirm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Estilos\MessageBoxCustom.xaml.cs">
+    <Compile Include="MessageBox\MessageBoxCustom.xaml.cs">
       <DependentUpon>MessageBoxCustom.xaml</DependentUpon>
     </Compile>
     <Compile Include="FrmAlumno.xaml.cs">

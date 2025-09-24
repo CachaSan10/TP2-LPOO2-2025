@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClasesBase;
+using ClasesBase.Utilities.Validators;
 
 namespace Vistas
 {
@@ -19,6 +20,7 @@ namespace Vistas
     /// </summary>
     public partial class FrmAlumno : Window
     {
+        string errores = "";
         public FrmAlumno()
         {
             InitializeComponent();
@@ -44,7 +46,7 @@ namespace Vistas
             if (resultado == true)
             {
 
-                if (altaAlumno.txtDNI.Text != "" && altaAlumno.txtNombre.Text != "" && altaAlumno.txtApellido.Text != "" && altaAlumno.txtEmail.Text != "")
+                if (verificarCampos())
                 {
                     Alumno oAlumno = new Alumno();
                     oAlumno.Alu_DNI = altaAlumno.txtDNI.Text;
@@ -67,9 +69,50 @@ namespace Vistas
                 }
                 else
                 {
-                    MessageBoxCustom.ShowWarning("No se permiten campos vacios");
+                    MessageBoxCustom.ShowError(errores);
                 }
             }
+        }
+
+        private Boolean verificarCampos()
+        {
+            Boolean verificado = false;
+            var resultadoNombre = StringValidatorNombreApellido.ValidarNombreApellido("Nombre", altaAlumno.txtNombre.Text);
+            var resultadoApellido = StringValidatorNombreApellido.ValidarNombreApellido("Apellido", altaAlumno.txtApellido.Text);
+            var resultadoDni = DniValidator.ValidarDni(altaAlumno.txtDNI.Text);
+            var resultadoEmail = EmailValidator.ValidarEmail(altaAlumno.txtEmail.Text);
+
+            if (resultadoNombre.IsValid && resultadoApellido.IsValid &&
+                resultadoEmail.IsValid && resultadoDni.IsValid
+                )
+            {
+                verificado = true;
+            }
+            else
+            {
+                if (!resultadoNombre.IsValid)
+                {
+                    errores = resultadoNombre.ErrorMessage + "\n";
+                }
+
+                if (!resultadoApellido.IsValid)
+                {
+                    errores = errores + " " + resultadoApellido.ErrorMessage + "\n";
+                }
+
+                if (!resultadoDni.IsValid)
+                {
+                    errores = errores + " " + resultadoDni.ErrorMessage + "\n";
+                }
+
+                if (!resultadoEmail.IsValid)
+                {
+                    errores = errores + " " + resultadoEmail.ErrorMessage + "\n";
+                }
+
+            }
+
+            return verificado;
         }
 
        

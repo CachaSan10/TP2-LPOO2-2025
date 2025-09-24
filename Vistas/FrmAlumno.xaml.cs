@@ -57,12 +57,12 @@ namespace Vistas
 
                     MessageBoxCustom.ShowSuccess(
 
-                        "Alumno cargado: \n" +
-                        "DNI: " + oAlumno.Alu_DNI + "\n" +
-                        "Apellido: " + oAlumno.Alu_Apellido + "\n" +
-                        "Nombre: " + oAlumno.Alu_Nombre + "\n" +
-                        "Email: " + oAlumno.Alu_Email
-
+                        //"Alumno cargado: \n" +
+                        //"DNI: " + oAlumno.Alu_DNI + "\n" +
+                        //"Apellido: " + oAlumno.Alu_Apellido + "\n" +
+                        //"Nombre: " + oAlumno.Alu_Nombre + "\n" +
+                        //"Email: " + oAlumno.Alu_Email
+                        "Alumno Guardado"
                         );
 
                     Limpiar_Campos();

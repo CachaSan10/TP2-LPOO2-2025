@@ -56,14 +56,14 @@ namespace Vistas
                     oDocente.Doc_Email = altaDocente.txtEmail.Text;
 
 
-                    MessageBoxCustom.Show(
+                    MessageBoxCustom.ShowSuccess(
 
-                        "Docente cargado: \n" +
-                        "DNI: " + oDocente.Doc_DNI + "\n" +
-                        "Apellido: " + oDocente.Doc_Apellido + "\n" +
-                        "Nombre: " + oDocente.Doc_Nombre + "\n" +
-                        "Email: " + oDocente.Doc_Email, "Datos Guardados", MessageType.Success
-
+                        //"Docente cargado: \n" +
+                        //"DNI: " + oDocente.Doc_DNI + "\n" +
+                        //"Apellido: " + oDocente.Doc_Apellido + "\n" +
+                        //"Nombre: " + oDocente.Doc_Nombre + "\n" +
+                        //"Email: " + oDocente.Doc_Email, "Datos Guardados", MessageType.Success
+                        "Docente Guardado"
                         );
                     Limpiar_Campos();
                 }

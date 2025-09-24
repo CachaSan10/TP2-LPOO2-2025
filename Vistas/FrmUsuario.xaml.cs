@@ -54,7 +54,7 @@ namespace Vistas
             // Enlazar lista al ComboBox
             altaUsuario.cmbRol.ItemsSource = roles;
             
-            altaUsuario.cmbRol.SelectedValuePath = "Rol_ID";          // ¡CORREGIDO! Era "rol_ID"
+            altaUsuario.cmbRol.SelectedValuePath = "Rol_ID";          
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -77,16 +77,19 @@ namespace Vistas
                     Usuario oUsuario = new Usuario();
                     oUsuario.Usu_ApellidoNombre = altaUsuario.txtApellido.Text + " " + altaUsuario.txtNombre.Text;
                     oUsuario.Usu_Contrasenia = altaUsuario.txtPassword.Text;
+                    oUsuario.Usu_NombreUsuario = altaUsuario.txtNombreUsuario.Text;
+               
                     oUsuario.Rol_ID = altaUsuario.cmbRol.SelectedValue != null ? (int)altaUsuario.cmbRol.SelectedValue : 0;
 
                     // Mostrar datos del usuario creado
                     MessageBoxCustom.ShowSuccess(
-                        "Usuario Cargado: \n" +
-                        "Apellido y Nombre: " + oUsuario.Usu_ApellidoNombre + "\n" +
-                        "Nombre de Usuario: " + oUsuario.Usu_ApellidoNombre + "\n" +
-                        "Rol: " + oUsuario.Rol_ID + "\n" +
-                        "Contraseña: " + new string('*', oUsuario.Usu_Contrasenia.Length)
-                       
+                        //"Usuario Cargado: \n" +
+                        //"Apellido y Nombre: " + oUsuario.Usu_ApellidoNombre + "\n" +
+                        //"Nombre de Usuario: " + oUsuario.Usu_NombreUsuario + "\n" +
+                        //"Rol: " + altaUsuario.cmbRol.SelectedItem.ToString() + "\n" +
+                        //"Contraseña: " + new string('*', oUsuario.Usu_Contrasenia.Length)
+                       "Usuario Guardado"
+
                         
                     );
 

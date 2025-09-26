@@ -4,7 +4,7 @@
         xmlns:control="clr-namespace:Vistas.ControlUsuario"
         Title="Sistema de Gestión de Cursos"
         Height="722" Width="1220"
-        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Background="#f8f0ec">
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowState="Maximized" Background="#f8f0ec">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
